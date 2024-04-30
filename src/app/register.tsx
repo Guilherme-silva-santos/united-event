@@ -3,7 +3,7 @@ import { colors } from "@/styles/colors";
 import { Input } from "../../components/input";
 import { FontAwesome6, MaterialIcons } from "@expo/vector-icons";
 import { Button } from "../../components/button";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { useState } from "react";
 import { z } from "zod";
 
@@ -24,6 +24,7 @@ export default function Register() {
             const validatedName = NameSchema.parse(name);
             const validatedEmail = EmailSchema.parse(email);
             // continuidade do para quando o campo for envidado ao backend
+            router.push("/ticket")
             console.log("Nome válido:", validatedName);
             console.log("Email válido:", validatedEmail);
         } catch (err) {
